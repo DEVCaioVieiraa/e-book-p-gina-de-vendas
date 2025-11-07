@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Segredo da Mãe Sarada - Recuperação Pós-Parto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ffa07a 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #ff6b9d;
+            padding: 20px 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+        
+        .price {
+            font-size: 2.5em;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        .price-old {
+            text-decoration: line-through;
+            font-size: 0.5em;
+            opacity: 0.7;
+        }
+        
+        /* PROBLEMA SECTION */
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section h2 {
+            font-size: 2.5em;
+            color: #ff6b9d;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .problema-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .problema-card {
+            background: #fff5f0;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #ff6b9d;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .problema-card h3 {
+            color: #ff6b9d;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        /* SOLUÇÃO SECTION */
+        .solucao {
+            background: linear-gradient(135deg, #ffeef8 0%, #fff5f0 100%);
+        }
+        
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .beneficio-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .beneficio-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .beneficio-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .beneficio-card h3 {
+            color: #ff6b9d;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        /* CONTEÚDO DO EBOOK */
+        .conteudo-box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        
+        .modulo {
+            padding: 20px;
+            margin: 15px 0;
+            background: #ffeef8;
+            border-radius: 10px;
+            border-left: 5px solid #ff6b9d;
+        }
+        
+        .modulo h3 {
+            color: #ff6b9d;
+            margin-bottom: 10px;
+        }
+        
+        /* DEPOIMENTOS */
+        .depoimentos {
+            background: #f9f9f9;
+        }
+        
+        .depoimento-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .depoimento-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .depoimento-avatar {
+            width: 60px;
+            height: 60px;
+            background: #ff6b9d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .depoimento-nome {
+            font-weight: bold;
+            color: #ff6b9d;
+        }
+        
+        .stars {
+            color: #ffa07a;
+            font-size: 1.2em;
+        }
+        
+        /* GARANTIA */
+        .garantia {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ffa07a 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .garantia-box {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            border: 3px solid white;
+        }
+        
+        .garantia-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            background: white;
+            padding: 25px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #ff6b9d;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* CTA FINAL */
+        .cta-final {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ffa07a 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .urgencia-box {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px auto;
+            max-width: 600px;
+            border: 2px dashed white;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: #333;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2em;
+            }
+            
+            .section h2 {
+                font-size: 2em;
+            }
+            
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1.1em;
+            }
+        }
+        
+        /* ANIMAÇÕES */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .bonus-badge {
+            background: #ffa07a;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>💪 O SEGREDO DA MÃE SARADA</h1>
+            <p class="subtitle">Recupere Seu Corpo Pós-Parto com Segurança, Emagreça Sem Comprometer a Amamentação e Fortaleça Seu Core em Casa!</p>
+            
+            <div class="price">
+                <span class="price-old">De R$ 97,00</span><br>
+                Por apenas R$ 47,00
+            </div>
+            
+            <a href="#" class="cta-button pulse" id="cta-hero">
+                QUERO TRANSFORMAR MEU CORPO AGORA! 🔥
+            </a>
+            
+            <p style="margin-top: 20px; font-size: 0.9em;">⚡ Acesso Imediato • 100% Online • Garantia de 7 Dias</p>
+        </div>
+    </section>
+
+    <!-- PROBLEMA SECTION -->
+    <section class="section">
+        <h2>Você Se Identifica Com Isso?</h2>
+        <div class="problema-grid">
+            <div class="problema-card">
+                <h3>😰 Frustração com o Corpo</h3>
+                <p>Olha no espelho e não reconhece mais seu corpo. A barriga flácida, as estrias, o peso extra... parece que nada volta ao normal.</p>
+            </div>
+            
+            <div class="problema-card">
+                <h3>😓 Medo de Prejudicar o Bebê</h3>
+                <p>Quer emagrecer mas tem medo de fazer dietas que possam afetar a produção de leite ou a saúde do seu filho.</p>
+            </div>
+            
+            <div class="problema-card">
+                <h3>⏰ Falta de Tempo</h3>
+                <p>Não tem tempo (nem dinheiro) para academia. Precisa de algo que funcione em casa, nos intervalos do bebê.</p>
+            </div>
+            
+            <div class="problema-card">
+                <h3>🤔 Informações Confusas</h3>
+                <p>Na internet tem mil dicas contraditórias. Não sabe em quem confiar ou por onde começar de forma segura.</p>
+            </div>
+            
+            <div class="problema-card">
+                <h3>💔 Diástase e Flacidez</h3>
+                <p>Descobriu que tem diástase abdominal e não sabe como tratar. Tem medo de fazer exercícios errados e piorar.</p>
+            </div>
+            
+            <div class="problema-card">
+                <h3>😔 Autoestima em Baixa</h3>
+                <p>Se sente cansada, sem energia e com a autoestima lá embaixo. Quer se sentir bonita e forte de novo.</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <p style="font-size: 1.3em; color: #ff6b9d; font-weight: bold;">Se você disse SIM para pelo menos 2 dessas situações...</p>
+            <p style="font-size: 1.5em; margin-top: 20px;">👇 Este E-book Foi Feito Especialmente Para VOCÊ! 👇</p>
+        </div>
+    </section>
+
+    <!-- SOLUÇÃO SECTION -->
+    <section class="section solucao">
+        <h2>O Que Você Vai Descobrir Neste E-book</h2>
+        
+        <div class="beneficios-grid">
+            <div class="beneficio-card">
+                <div class="beneficio-icon">🧠</div>
+                <h3>Mentalidade Vencedora</h3>
+                <p>Aprenda a estabelecer metas realistas e a cultivar paciência científica. Seu corpo merece tempo e respeito!</p>
+            </div>
+            
+            <div class="beneficio-card">
+                <div class="beneficio-icon">🍽️</div>
+                <h3>Nutrição Estratégica</h3>
+                <p>Plano alimentar de 6 refeições que acelera o metabolismo SEM comprometer a produção de leite materno.</p>
+            </div>
+            
+            <div class="beneficio-card">
+                <div class="beneficio-icon">💪</div>
+                <h3>Protocolo de 3 Fases</h3>
+                <p>Sistema progressivo e seguro para recuperar seu core, fechar a diástase e fortalecer todo o corpo em casa.</p>
+            </div>
+            
+            <div class="beneficio-card">
+                <div class="beneficio-icon">🤰</div>
+                <h3>Seguro para Amamentação</h3>
+                <p>Tudo baseado em diretrizes da OMS e SBP. Emagreça com saúde mantendo seu leite forte e nutritivo.</p>
+            </div>
+            
+            <div class="beneficio-card">
+                <div class="beneficio-icon">⏱️</div>
+                <h3>Apenas 15 Minutos</h3>
+                <p>Treinos rápidos e eficientes que cabem na sua rotina. Faça nos intervalos do bebê, sem sair de casa!</p>
+            </div>
+            
+            <div class="beneficio-card">
+                <div class="beneficio-icon">✨</div>
+                <h3>Técnicas Hipopressivas</h3>
+                <p>Aprenda o famoso "vácuo abdominal" e outras técnicas secretas para barriga lisa e cintura definida.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTEÚDO DO EBOOK -->
+    <section class="section">
+        <h2>📚 Conteúdo Completo do E-book</h2>
+        
+        <div class="conteudo-box">
+            <div class="modulo">
+                <h3>MÓDULO 1: O RECOMEÇO MENTAL</h3>
+                <p>✓ Desmistificando o corpo pós-parto</p>
+                <p>✓ Como estabelecer metas realistas e seguras</p>
+                <p>✓ A tríade essencial: Sono, Hidratação e Apoio</p>
+                <p>✓ Mindset da Mãe Sarada</p>
+            </div>
+            
+            <div class="modulo">
+                <h3>MÓDULO 2: NUTRIÇÃO ESTRATÉGICA</h3>
+                <p>✓ A matemática da amamentação (queime calorias amamentando!)</p>
+                <p>✓ Os micronutrientes que salvam: Ferro, Vitamina D e Ômega 3</p>
+                <p>✓ Plano alimentar de 6 refeições inteligentes</p>
+                <p>✓ Cardápio completo e prático</p>
+            </div>
+            
+            <div class="modulo">
+                <h3>MÓDULO 3: MOVIMENTO INTELIGENTE</h3>
+                <p>✓ Como identificar e tratar a diástase em casa</p>
+                <p>✓ Protocolo de 3 Fases (progressão segura)</p>
+                <p>✓ Exercícios hipopressivos (vácuo abdominal)</p>
+                <p>✓ Treino de 15 minutos (rotina completa)</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <div class="bonus-badge">🎁 BÔNUS ESPECIAL</div>
+                <p style="margin-top: 15px; font-size: 1.1em;">Lista de Alimentos + Teste de Diástase + Guia de Hidratação</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="#" class="cta-button" id="cta-conteudo">
+                SIM! QUERO ACESSO COMPLETO AGORA 🚀
+            </a>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="section depoimentos">
+        <h2>❤️ O Que as Mães Estão Dizendo</h2>
+        
+        <div class="depoimento-card">
+            <div class="depoimento-header">
+                <div class="depoimento-avatar">J</div>
+                <div>
+                    <div class="depoimento-nome">Juliana Silva</div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+            <p>"Perdi 8kg em 2 meses seguindo o plano! O melhor é que meu leite não diminuiu NADA. Me sinto forte e cheia de energia. Recomendo demais!"</p>
+        </div>
+        
+        <div class="depoimento-card">
+            <div class="depoimento-header">
+                <div class="depoimento-avatar">C</div>
+                <div>
+                    <div class="depoimento-nome">Carla Mendes</div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+            <p>"Tinha diástase de 3 dedos e estava desesperada. Com os exercícios hipopressivos consegui reduzir para 1 dedo em 6 semanas! Minha barriga está voltando ao normal 😍"</p>
+        </div>
+        
+        <div class="depoimento-card">
+            <div class="depoimento-header">
+                <div class="depoimento-avatar">M</div>
+                <div>
+                    <div class="depoimento-nome">Mariana Costa</div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+            <p>"O que mais amei foi a parte da nutrição. Comecei a comer melhor, mais vezes ao dia, e mesmo assim emagreci! E o melhor: fazendo tudo em casa nos horários do bebê."</p>
+        </div>
+    </section>
+
+    <!-- GARANTIA -->
+    <section class="section garantia">
+        <h2>🛡️ Garantia Incondicional de 7 Dias</h2>
+        <div class="garantia-box">
+            <div class="garantia-icon">✅</div>
+            <h3 style="font-size: 1.8em; margin-bottom: 20px;">RISCO ZERO PARA VOCÊ!</h3>
+            <p style="font-size: 1.2em; line-height: 1.8;">
+                Se por qualquer motivo você não ficar satisfeita com o conteúdo, basta enviar um único e-mail dentro de 7 dias e devolvemos 100% do seu investimento. Sem perguntas, sem burocracia.
+            </p>
+            <p style="margin-top: 20px; font-weight: bold; font-size: 1.1em;">
+                Ou seja: você só tem a GANHAR! 💕
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <h2>❓ Perguntas Frequentes</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">É seguro fazer dieta durante a amamentação?</div>
+            <div class="faq-answer">Sim! O plano não é uma "dieta restritiva", mas sim uma nutrição estratégica baseada em diretrizes da OMS. Você vai comer MELHOR, não menos. O foco é qualidade nutricional que mantém o leite forte e ainda ajuda no emagrecimento saudável.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Preciso de equipamentos ou academia?</div>
+            <div class="faq-answer">Não! Todos os exercícios são feitos em casa, com o peso do seu próprio corpo. Você não precisa comprar nada além de uma garrafa de água e força de vontade!</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Tenho diástase. Posso fazer os exercícios?</div>
+            <div class="faq-answer">Sim! O protocolo foi desenvolvido ESPECIALMENTE para quem tem diástase. Você vai aprender quais exercícios evitar e quais são os melhores para fechar a separação abdominal com segurança.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Quanto tempo leva para ver resultados?</div>
+            <div class="faq-answer">Isso varia de pessoa para pessoa, mas a maioria das mães relatam mais energia e disposição nas primeiras 2 semanas. Resultados visuais aparecem geralmente entre 4-8 semanas com consistência.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Posso começar quanto tempo após o parto?</div>
+            <div class="faq-answer">Recomendamos começar após a liberação médica: geralmente 40 dias para parto normal e 60 dias para cesárea. A parte nutricional pode começar antes, mas exercícios físicos SEMPRE após liberação médica!</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Como recebo o e-book?</div>
+            <div class="faq-answer">Imediatamente após a confirmação do pagamento, você receberá o e-book em PDF no seu e-mail. Acesso instantâneo para começar sua transformação HOJE!</div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+        <h2 style="font-size: 2.5em; margin-bottom: 30px;">🔥 ÚLTIMA CHAMADA!</h2>
+        
+        <div class="urgencia-box">
+            <p style="font-size: 1.3em; font-weight: bold;">⚡ OFERTA POR TEMPO LIMITADO ⚡</p>
+            <p style="margin-top: 15px;">Esta é sua chance de transformar seu pós-parto com segurança e sem comprometer seu bebê!</p>
+        </div>
+        
+        <div class="price" style="margin: 30px 0;">
+            <span class="price-old">De R$ 97,00</span><br>
+            Por apenas R$ 47,00
+        </div>
+        
+        <a href="#" class="cta-button pulse" id="cta-final" style="background: white; color: #ff6b9d;">
+            GARANTIR MINHA VAGA AGORA! 💪
+        </a>
+        
+        <p style="margin-top: 30px; font-size: 1.1em;">
+            ✅ Acesso Imediato<br>
+            ✅ Garantia de 7 Dias<br>
+            ✅ Suporte por E-mail<br>
+            ✅ 100% Seguro e Aprovado
+        </p>
+        
+        <p style="margin-top: 40px; font-style: italic;">
+            Não deixe para amanhã a transformação que você pode começar HOJE! 💕
+        </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 O Segredo da Mãe Sarada - Todos os direitos reservados</p>
+        <p style="margin-top: 10px; font-size: 0.9em;">Este produto não substitui orientação médica profissional.</p>
+        <p style="margin-top: 20px;">
+            <a href="#" style="color: white; margin: 0 15px;">Termos de Uso</a> | 
+            <a href="#" style="color: white; margin: 0 15px;">Política de Privacidade</a>
+        </p>
+    </footer>
+
+    <script>
+        // Substitua este link pelo seu link real da Kiwify
+        const LINK_KIWIFY = 'https://pay.kiwify.com.br/SEU_LINK_AQUI';
+        
+        // Adicionar link de checkout em todos os botões CTA
+        document.getElementById('cta-hero').href = LINK_KIWIFY;
+        document.getElementById('cta-conteudo').href = LINK_KIWIFY;
+        document.getElementById('cta-final').href = LINK_KIWIFY;
+        
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
